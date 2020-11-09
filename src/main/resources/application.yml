@@ -1,0 +1,17 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          testgithub:
+            client-id: change-this
+            client-secret: change-this
+            provider: testgithub
+            redirect-uri: http://localhost:8080/login/oauth2/code/testgithub
+            authorization-grant-type: authorization_code
+        provider:
+          testgithub:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: login
